@@ -26,13 +26,13 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->sentence(4),
             'user_id' => User::factory(),
-            'image' => $this->faker->word,
-            'description' => $this->faker->text,
+            'image' => $this->faker->word(),
+            'description' => $this->faker->text(),
             'content' => $this->faker->paragraphs(3, true),
             'views' => $this->faker->numberBetween(-10000, 10000),
             'score' => $this->faker->randomFloat(2, 0, .99),
-            'is_featured' => $this->faker->boolean,
-            'slug' => $this->faker->slug,
+            'is_featured' => $this->faker->boolean(),
+            'slug' => $this->faker->slug(),
             'publishet_at' => $this->faker->dateTime(),
         ];
     }
