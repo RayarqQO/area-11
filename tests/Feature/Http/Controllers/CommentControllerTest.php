@@ -34,7 +34,7 @@ class CommentControllerTest extends TestCase
      */
     public function store_saves_and_redirects()
     {
-        $text = $this->faker->word;
+        $text = $this->faker->word();
         $user = User::factory()->create();
         $post = Post::factory()->create();
 
@@ -90,7 +90,7 @@ class CommentControllerTest extends TestCase
     public function update_redirects()
     {
         $comment = Comment::factory()->create();
-        $text = $this->faker->word;
+        $text = $this->faker->word();
         $user = User::factory()->create();
         $post = Post::factory()->create();
 

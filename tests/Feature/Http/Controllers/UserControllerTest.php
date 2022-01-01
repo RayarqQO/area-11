@@ -59,9 +59,9 @@ class UserControllerTest extends TestCase
      */
     public function store_saves_and_redirects()
     {
-        $name = $this->faker->name;
-        $email = $this->faker->safeEmail;
-        $password = $this->faker->password;
+        $name = $this->faker->name();
+        $email = $this->faker->safeEmail();
+        $password = $this->faker->password();
 
         $response = $this->post(route('user.store'), [
             'name' => $name,
@@ -130,9 +130,9 @@ class UserControllerTest extends TestCase
     public function update_redirects()
     {
         $user = User::factory()->create();
-        $name = $this->faker->name;
-        $email = $this->faker->safeEmail;
-        $password = $this->faker->password;
+        $name = $this->faker->name();
+        $email = $this->faker->safeEmail();
+        $password = $this->faker->password();
 
         $response = $this->put(route('user.update', $user), [
             'name' => $name,

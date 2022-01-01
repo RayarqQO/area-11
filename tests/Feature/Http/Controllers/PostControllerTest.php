@@ -62,13 +62,13 @@ class PostControllerTest extends TestCase
     {
         $title = $this->faker->sentence(4);
         $user = User::factory()->create();
-        $image = $this->faker->word;
-        $description = $this->faker->text;
+        $image = $this->faker->word();
+        $description = $this->faker->text();
         $content = $this->faker->paragraphs(3, true);
         $views = $this->faker->numberBetween(-10000, 10000);
         $score = $this->faker->randomFloat(/** decimal_attributes **/);
-        $is_featured = $this->faker->boolean;
-        $slug = $this->faker->slug;
+        $is_featured = $this->faker->boolean();
+        $slug = $this->faker->slug();
 
         $response = $this->post(route('post.store'), [
             'title' => $title,
@@ -151,13 +151,13 @@ class PostControllerTest extends TestCase
         $post = Post::factory()->create();
         $title = $this->faker->sentence(4);
         $user = User::factory()->create();
-        $image = $this->faker->word;
-        $description = $this->faker->text;
+        $image = $this->faker->word();
+        $description = $this->faker->text();
         $content = $this->faker->paragraphs(3, true);
         $views = $this->faker->numberBetween(-10000, 10000);
         $score = $this->faker->randomFloat(/** decimal_attributes **/);
-        $is_featured = $this->faker->boolean;
-        $slug = $this->faker->slug;
+        $is_featured = $this->faker->boolean();
+        $slug = $this->faker->slug();
 
         $response = $this->put(route('post.update', $post), [
             'title' => $title,
