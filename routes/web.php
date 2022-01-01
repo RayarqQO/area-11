@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('user', App\Http\Controllers\UserController::class);
+
+Route::resource('post', App\Http\Controllers\PostController::class);
+
+Route::resource('comment', App\Http\Controllers\CommentController::class)->only('store', 'edit', 'update');
+
+Route::resource('tag', App\Http\Controllers\TagController::class);
