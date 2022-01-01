@@ -18,6 +18,7 @@ class CreateTagsTable extends Migration
             $table->string('title');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 
