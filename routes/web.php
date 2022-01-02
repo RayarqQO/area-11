@@ -17,11 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::resource('user', App\Http\Controllers\UserController::class);
-
-Route::resource('post', App\Http\Controllers\PostController::class);
-
-Route::resource('comment', App\Http\Controllers\CommentController::class)->only('store', 'edit', 'update');
-
-Route::resource('tag', App\Http\Controllers\TagController::class);
+require __DIR__.'/auth.php';
